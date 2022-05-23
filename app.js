@@ -19,11 +19,11 @@ app.get("/", function (req, res) {
     month: "long",
   };
 
-  let yearOption = {
-    year: "numeric",
-  };
+//   let yearOption = {
+//     year: "numeric",
+//   };
 
-  let year = today.toLocaleDateString("en-US", yearOption);
+  //let currentYear = today.toLocaleDateString("en-US", yearOption);
   let currentDay = today.toLocaleDateString("en-US", options);
 
   res.render("list", {
@@ -46,8 +46,17 @@ app.post("/", (req, res) => {
 });
 
 app.get("/work", function (req, res) {
-  res.render("list", { listTitle: "Work List", newListItems: workItems });
+  res.render("list", {
+    listTitle: "Work List",
+    newListItems: workItems,
+    year: currentYear,
+  });
   console.log("Server started on port 3000");
+});
+
+app.get("/about", function (req, res) {
+  res.render("about");
+  
 });
 
 app.listen(3000, function () {
