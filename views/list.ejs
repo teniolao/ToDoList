@@ -8,12 +8,15 @@
     <h1><%= kindOfDay %></h1>
 
     <ul>
-      <li>Buy food</li>
-      <li>Cook food</li>
-      <li>Eat food</li>
+      <% for(let i=0; i<newListItems.length; i++){ %>
+           <li><%= newListItems[i] %></li>  
+      <% } %>                                                                                                                                                                                                                                                             %></li>
     </ul>
 
-  
+    <form class="" action="/" method="post">
+        <input type="text" name="newItem" value="">
+        <button type="submit" name="button" >submit</button>
+    </form>
 
     <!-- https://ejs.co/  -->
   </body>
